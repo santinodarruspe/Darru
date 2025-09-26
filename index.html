@@ -1,54 +1,81 @@
-import React, { useState } from 'react';
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Sandler - Presentación</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
 
-const slides = [
-  {
-    title: "Infancia y juventud",
-    text: "Adam Sandler nació el 9 de septiembre de 1966 en Brooklyn, Nueva York. Desde joven mostró inclinación por la comedia y el entretenimiento, realizando presentaciones en clubes de stand-up durante sus años universitarios.",
-    bgImg: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1600&q=80"
-  },
-  {
-    title: "Carrera profesional",
-    text: "Sandler ganó notoriedad en 'Saturday Night Live' en los años 90. Luego protagonizó películas icónicas de comedia como 'Happy Gilmore', 'Billy Madison' y 'The Waterboy', que lo consolidaron como una de las figuras más reconocidas de Hollywood.",
-    bgImg: "https://images.unsplash.com/photo-1515165562835-c3b8e3df54ef?w=1600&q=80"
-  },
-  {
-    title: "Vida actual",
-    text: "Además de su carrera como actor, Adam Sandler es productor, guionista y ocasional músico. Ha trabajado en dramas aclamados como 'Uncut Gems' y continúa siendo una figura influyente en la industria del cine y la comedia.",
-    bgImg: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=1600&q=80"
-  }
-];
+    .slide {
+      max-width: 900px;
+      margin: 50px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+    }
 
-export default function AdamSandlerSlides() {
-  const [index, setIndex] = useState(0);
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 30px;
+      text-align: center;
+    }
 
-  const prevSlide = () => {
-    setIndex((i) => (i === 0 ? slides.length - 1 : i - 1));
-  };
+    .slide h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
 
-  const nextSlide = () => {
-    setIndex((i) => (i === slides.length - 1 ? 0 : i + 1));
-  };
-
-  const { title, text, bgImg } = slides[index];
-
-  return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center text-center text-white relative"
-      style={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50" />
-      <div className="relative z-10 p-8">
-        <h1 className="text-4xl font-bold mb-6 drop-shadow-lg">{title}</h1>
-        <p className="text-lg max-w-2xl leading-relaxed drop-shadow-md">{text}</p>
-        <div className="mt-10 flex gap-4 justify-center">
-          <button onClick={prevSlide} className="px-4 py-2 bg-gray-800 bg-opacity-80 text-white rounded">Anterior</button>
-          <button onClick={nextSlide} className="px-4 py-2 bg-gray-800 bg-opacity-80 text-white rounded">Siguiente</button>
-        </div>
-      </div>
+    .slide p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Diapositiva 1 -->
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay">
+      <h1>Infancia y juventud</h1>
+      <p>
+        Adam Sandler nació el 9 de septiembre de 1966 en Brooklyn, Nueva York.
+        Desde joven mostró inclinación por la comedia y el entretenimiento,
+        realizando presentaciones en clubes de stand-up durante sus años universitarios.
+      </p>
     </div>
-  );
-}
+  </div>
+
+  <!-- Diapositiva 2 -->
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1515165562835-c3b8e3df54ef?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay">
+      <h1>Carrera profesional</h1>
+      <p>
+        Sandler ganó notoriedad en "Saturday Night Live" en los años 90. Luego protagonizó
+        películas icónicas de comedia como "Happy Gilmore", "Billy Madison" y "The Waterboy",
+        que lo consolidaron como una de las figuras más reconocidas de Hollywood.
+      </p>
+    </div>
+  </div>
+
+  <!-- Diapositiva 3 -->
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1920&q=80');">
+    <div class="overlay">
+      <h1>Vida actual</h1>
+      <p>
+        Además de su carrera como actor, Adam Sandler es productor, guionista y ocasional
+        músico. Ha trabajado en dramas aclamados como "Uncut Gems" y continúa siendo
+        una figura influyente en la industria del cine y la comedia.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
