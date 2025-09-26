@@ -1,45 +1,243 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <title>Bienvenido a Clash Royale</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-        
-        body {
-            margin: 0;
-            height: 100vh;
-            background: url('https://wallpapercave.com/wp/wp4889386.jpg') no-repeat center center/cover;
-            font-family: 'Press Start 2P', cursive, Arial, sans-serif;
-            color: #ffd700; /* amarillo dorado */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-shadow: 2px 2px 4px #000;
-        }
-        .welcome-container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 40px 60px;
-            border: 3px solid #d32f2f; /* rojo intenso */
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 0 20px #d32f2f;
-            max-width: 400px;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.1em;
-            margin-top: 0;
-        }
-    </style>
-</head>
-<body>
-    <div class="welcome-container">
-        <h1>¡Bienvenido a Clash Royale!</h1>
-        <p>Prepárate para la batalla y domina la arena.</p>
+/*
+Vlog de Adam Sandler - Single-file React component
+Archivo: VlogAdamSandler.jsx
+
+Instrucciones rápidas para crear el repo en GitHub:
+1. Crear un nuevo repositorio en GitHub (por ejemplo: "vlog-adam-sandler").
+2. En tu máquina:
+   git clone <repo-url>
+   cd vlog-adam-sandler
+   npm init -y
+   npm install react react-dom
+   (recomendado) usar Vite: npm create vite@latest . -- --template react
+   Instalar Tailwind (opcional) o usar el CDN incluido en index.html
+3. Copiar este componente en src/VlogAdamSandler.jsx y usarlo como App.jsx o importarlo.
+4. Colocar los assets (si quieres) en /public o usar los URLs incluidos.
+
+Características incluidas en este archivo:
+- Header con navegación
+- Hero con imagen y llamado a la acción
+- Grid de videos (embeds de YouTube)
+- Sección de galería de imágenes (Unsplash URLs)
+- Sección "Sobre Adam" con estilo editorial
+- Sección de blog/entradas (posts simulados)
+- Footer y formulario de contacto (simulado)
+- Estética moderna con Tailwind (clases usadas) y diseño adaptativo
+
+Nota: reemplaza IDs de YouTube y URLs de imágenes por contenidos reales que tengas permiso de usar.
+
+*/
+
+import React from 'react';
+
+const videos = [
+  { id: 'dQw4w9WgXcQ', title: 'Sketch - Ejemplo 1' }, // placeholder
+  { id: '3GwjfUFyY6M', title: 'Entrevista - Ejemplo 2' },
+  { id: 'V-_O7nl0Ii0', title: 'Clip - Ejemplo 3' },
+];
+
+const gallery = [
+  'https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=1400&q=80',
+  'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1400&q=80',
+  'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=1400&q=80',
+  'https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=1400&q=80',
+];
+
+const posts = [
+  { title: 'Detrás de cámaras: la comedia física', date: 'Sep 20, 2025', excerpt: 'Una mirada rápida al entrenamiento y preparación para sketches físicos.' },
+  { title: 'Colaboraciones icónicas', date: 'Aug 2, 2025', excerpt: 'Cómo surgieron algunas de las colaboraciones más memorables.' },
+  { title: 'Inspiración y proceso creativo', date: 'Jun 11, 2025', excerpt: 'Adam habla (en entrevistas) sobre sus influencias y su proceso.' },
+];
+
+export default function VlogAdamSandler() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-900 font-sans">
+      {/* Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-red-400 flex items-center justify-center text-white font-bold">AS</div>
+            <div>
+              <h1 className="text-lg font-bold">Adam Sandler Vlog</h1>
+              <p className="text-xs text-gray-500">Sketches, entrevistas, detrás de cámaras</p>
+            </div>
+          </div>
+
+          <nav className="hidden md:flex gap-6 text-sm">
+            <a href="#videos" className="hover:underline">Videos</a>
+            <a href="#galeria" className="hover:underline">Galería</a>
+            <a href="#sobre" className="hover:underline">Sobre</a>
+            <a href="#blog" className="hover:underline">Blog</a>
+            <a href="#contacto" className="text-white bg-blue-600 px-3 py-1 rounded">Contacto</a>
+          </nav>
+
+          <div className="md:hidden">
+            {/* Mobile simple nav (could be a menu) */}
+            <a href="#videos" className="text-sm px-3 py-1 rounded bg-blue-600 text-white">Ver</a>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="bg-white">
+        <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-4xl font-extrabold leading-tight">Bienvenido al Vlog no oficial de <span className="text-yellow-600">Adam Sandler</span></h2>
+            <p className="mt-4 text-gray-600">Encuentra sketches emblemáticos, entrevistas, fotos de rodaje y artículos exclusivos sobre su carrera y su influencia en la comedia moderna.</p>
+
+            <div className="mt-6 flex gap-3">
+              <a href="#videos" className="px-5 py-3 bg-yellow-500 rounded font-semibold">Ver videos</a>
+              <a href="#sobre" className="px-5 py-3 border rounded text-sm">Leer sobre Adam</a>
+            </div>
+
+            <div className="mt-8 flex items-center gap-4 text-sm text-gray-500">
+              <div className="flex items-center gap-2">
+                <strong>✔</strong>
+                <span>Actualizaciones semanales</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <strong>✔</strong>
+                <span>Galería HD</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-lg overflow-hidden shadow-lg">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=1400&q=80" alt="rodaje" className="w-full h-80 object-cover" />
+          </div>
+        </div>
+      </section>
+
+      {/* Videos */}
+      <section id="videos" className="max-w-6xl mx-auto px-6 py-12">
+        <h3 className="text-2xl font-bold">Videos destacados</h3>
+        <p className="text-gray-600 mt-2">Selección curada: sketches y entrevistas.</p>
+
+        <div className="mt-6 grid md:grid-cols-3 gap-6">
+          {videos.map((v) => (
+            <article key={v.id} className="bg-white rounded shadow-sm overflow-hidden">
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  title={v.title}
+                  src={`https://www.youtube.com/embed/${v.id}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-56"
+                />
+              </div>
+              <div className="p-4">
+                <h4 className="font-semibold">{v.title}</h4>
+                <p className="text-sm text-gray-500 mt-2">Descripción breve del video o contexto histórico.</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section id="galeria" className="bg-gray-50 py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-2xl font-bold">Galería</h3>
+          <p className="text-gray-600 mt-2">Fotos de rodaje, portadas y material detrás de cámaras.</p>
+
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {gallery.map((src, i) => (
+              <div key={i} className="rounded overflow-hidden shadow-sm transform hover:scale-105 transition">
+                <img src={src} alt={`gallery-${i}`} className="w-full h-40 object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sobre */}
+      <section id="sobre" className="max-w-6xl mx-auto px-6 py-12">
+        <div className="md:flex gap-8 items-start">
+          <div className="md:w-1/2">
+            <h3 className="text-2xl font-bold">Sobre Adam</h3>
+            <p className="text-gray-700 mt-4">Adam Sandler es un comediante, actor y productor conocido por su estilo único que mezcla humor absurdo, canciones pegajosas y personajes entrañables. En este vlog se agrupan clips representativos de su carrera, análisis y material visual exclusivo recopilado de fuentes públicas.</p>
+
+            <ul className="mt-4 grid gap-2">
+              <li className="text-sm text-gray-600">• Carrera: Saturday Night Live, películas, stand-up.</li>
+              <li className="text-sm text-gray-600">• Temas: comedia física, personajes recurrentes, banda sonora propia.</li>
+              <li className="text-sm text-gray-600">• Atención: este sitio es un fan hub no oficial.</li>
+            </ul>
+          </div>
+
+          <aside className="md:w-1/2 mt-6 md:mt-0 bg-white rounded p-4 shadow-sm">
+            <h4 className="font-semibold">Quick facts</h4>
+            <div className="mt-3 text-sm text-gray-600 grid grid-cols-2 gap-2">
+              <div>
+                <strong>Nacimiento</strong>
+                <div>Sep 9, 1966</div>
+              </div>
+              <div>
+                <strong>Profesión</strong>
+                <div>Actor / Comediante</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* Blog posts */}
+      <section id="blog" className="bg-white py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <h3 className="text-2xl font-bold">Entradas</h3>
+          <div className="mt-6 grid md:grid-cols-3 gap-6">
+            {posts.map((p, i) => (
+              <article key={i} className="rounded shadow-sm overflow-hidden bg-gray-50">
+                <div className="p-4">
+                  <h4 className="font-semibold">{p.title}</h4>
+                  <div className="text-xs text-gray-500 mt-1">{p.date}</div>
+                  <p className="text-sm text-gray-700 mt-3">{p.excerpt}</p>
+                  <a href="#" className="mt-4 inline-block text-sm text-blue-600">Leer más →</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contacto */}
+      <section id="contacto" className="max-w-6xl mx-auto px-6 py-12">
+        <h3 className="text-2xl font-bold">Contacto</h3>
+        <p className="text-gray-600 mt-2">¿Tienes material, sugerencias o quieres colaborar? Escríbenos (demo).</p>
+
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          <form className="bg-white rounded p-6 shadow-sm">
+            <label className="block text-sm">Nombre</label>
+            <input className="w-full mt-2 p-2 border rounded" placeholder="Tu nombre" />
+
+            <label className="block text-sm mt-4">Email</label>
+            <input className="w-full mt-2 p-2 border rounded" placeholder="tu@email.com" />
+
+            <label className="block text-sm mt-4">Mensaje</label>
+            <textarea className="w-full mt-2 p-2 border rounded h-28" placeholder="Escribe tu mensaje..." />
+
+            <button type="submit" className="mt-4 px-4 py-2 bg-blue-600 text-white rounded">Enviar</button>
+          </form>
+
+          <div className="bg-gray-50 rounded p-6">
+            <h4 className="font-semibold">Sigue el proyecto</h4>
+            <p className="text-sm text-gray-600 mt-2">Suscríbete al repositorio o sigue el canal para actualizaciones.</p>
+            <div className="mt-4 flex gap-3">
+              <a className="px-3 py-2 border rounded">GitHub</a>
+              <a className="px-3 py-2 border rounded">YouTube</a>
+              <a className="px-3 py-2 border rounded">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-200 py-8 mt-12">
+        <div className="max-w-6xl mx-auto px-6 text-sm flex flex-col md:flex-row items-center justify-between">
+          <div>© {new Date().getFullYear()} Vlog no oficial - Adam Sandler (fan project)</div>
+          <div className="mt-2 md:mt-0">Hecho con ❤️ • Licencia: MIT (por defecto)</div>
+        </div>
+      </footer>
     </div>
-</body>
-</html>
+  );
+}
