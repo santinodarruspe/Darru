@@ -1,22 +1,20 @@
-
-
 import React, { useState } from 'react';
 
 const slides = [
   {
     title: "Infancia y juventud",
     text: "Adam Sandler nació el 9 de septiembre de 1966 en Brooklyn, Nueva York. Desde joven mostró inclinación por la comedia y el entretenimiento, realizando presentaciones en clubes de stand-up durante sus años universitarios.",
-    bg: "bg-yellow-100"
+    bgImg: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=1600&q=80"
   },
   {
     title: "Carrera profesional",
     text: "Sandler ganó notoriedad en 'Saturday Night Live' en los años 90. Luego protagonizó películas icónicas de comedia como 'Happy Gilmore', 'Billy Madison' y 'The Waterboy', que lo consolidaron como una de las figuras más reconocidas de Hollywood.",
-    bg: "bg-blue-100"
+    bgImg: "https://images.unsplash.com/photo-1515165562835-c3b8e3df54ef?w=1600&q=80"
   },
   {
     title: "Vida actual",
     text: "Además de su carrera como actor, Adam Sandler es productor, guionista y ocasional músico. Ha trabajado en dramas aclamados como 'Uncut Gems' y continúa siendo una figura influyente en la industria del cine y la comedia.",
-    bg: "bg-green-100"
+    bgImg: "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=1600&q=80"
   }
 ];
 
@@ -31,15 +29,25 @@ export default function AdamSandlerSlides() {
     setIndex((i) => (i === slides.length - 1 ? 0 : i + 1));
   };
 
-  const { title, text, bg } = slides[index];
+  const { title, text, bgImg } = slides[index];
 
   return (
-    <div className={`min-h-screen flex flex-col items-center justify-center ${bg} p-8 text-center`}> 
-      <h1 className="text-4xl font-bold mb-6">{title}</h1>
-      <p className="text-lg max-w-2xl leading-relaxed">{text}</p>
-      <div className="mt-10 flex gap-4">
-        <button onClick={prevSlide} className="px-4 py-2 bg-gray-700 text-white rounded">Anterior</button>
-        <button onClick={nextSlide} className="px-4 py-2 bg-gray-700 text-white rounded">Siguiente</button>
+    <div
+      className="min-h-screen flex flex-col items-center justify-center text-center text-white relative"
+      style={{
+        backgroundImage: `url(${bgImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-50" />
+      <div className="relative z-10 p-8">
+        <h1 className="text-4xl font-bold mb-6 drop-shadow-lg">{title}</h1>
+        <p className="text-lg max-w-2xl leading-relaxed drop-shadow-md">{text}</p>
+        <div className="mt-10 flex gap-4 justify-center">
+          <button onClick={prevSlide} className="px-4 py-2 bg-gray-800 bg-opacity-80 text-white rounded">Anterior</button>
+          <button onClick={nextSlide} className="px-4 py-2 bg-gray-800 bg-opacity-80 text-white rounded">Siguiente</button>
+        </div>
       </div>
     </div>
   );
