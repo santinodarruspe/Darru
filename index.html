@@ -2,81 +2,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Sandler - Presentación</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación Adam Sandler</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
+      background-color: #1c1c1c;
+      color: #fff;
+      margin: 0;
+      padding: 0;
     }
-
-    .slide {
+    .container {
       max-width: 900px;
-      margin: 50px auto;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      color: white;
+      margin: 0 auto;
+      padding: 20px;
     }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 50px 30px;
+    h1, h2 {
       text-align: center;
+      color: #f5c518;
     }
-
-    .slide h1 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .slide p {
-      font-size: 1.2rem;
+    p {
       line-height: 1.6;
+      font-size: 18px;
+    }
+    .image {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .image img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+    .section {
+      margin-bottom: 50px;
+      padding: 20px;
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
   </style>
 </head>
 <body>
-  <!-- Diapositiva 1 -->
-  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1920&q=80');">
-    <div class="overlay">
-      <h1>Infancia y juventud</h1>
-      <p>
-        Adam Sandler nació el 9 de septiembre de 1966 en Brooklyn, Nueva York.
-        Desde joven mostró inclinación por la comedia y el entretenimiento,
-        realizando presentaciones en clubes de stand-up durante sus años universitarios.
-      </p>
-    </div>
-  </div>
+  <div class="container">
+    <h1>Adam Sandler</h1>
 
-  <!-- Diapositiva 2 -->
-  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1515165562835-c3b8e3df54ef?auto=format&fit=crop&w=1920&q=80');">
-    <div class="overlay">
-      <h1>Carrera profesional</h1>
-      <p>
-        Sandler ganó notoriedad en "Saturday Night Live" en los años 90. Luego protagonizó
-        películas icónicas de comedia como "Happy Gilmore", "Billy Madison" y "The Waterboy",
-        que lo consolidaron como una de las figuras más reconocidas de Hollywood.
-      </p>
+    <div class="section">
+      <h2>Biografía</h2>
+      <p>Adam Sandler es un actor, comediante y productor estadounidense, conocido por sus películas de comedia y su estilo humorístico único.</p>
+      <div class="image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Adam_Sandler_2011.jpg" alt="Adam Sandler">
+      </div>
     </div>
-  </div>
 
-  <!-- Diapositiva 3 -->
-  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1920&q=80');">
-    <div class="overlay">
-      <h1>Vida actual</h1>
-      <p>
-        Además de su carrera como actor, Adam Sandler es productor, guionista y ocasional
-        músico. Ha trabajado en dramas aclamados como "Uncut Gems" y continúa siendo
-        una figura influyente en la industria del cine y la comedia.
-      </p>
+    <div class="section">
+      <h2>Películas destacadas</h2>
+      <p>Algunas de sus películas más conocidas incluyen “Happy Gilmore”, “The Waterboy” y “Uncut Gems”.</p>
+      <div class="image">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Happy_gilmore.jpg" alt="Happy Gilmore">
+      </div>
+      <div class="image">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/The_Waterboy_movie.jpg" alt="The Waterboy">
+      </div>
     </div>
+
+    <div class="section">
+      <h2>Curiosidades</h2>
+      <p>Además de actuar, Sandler ha lanzado varios álbumes de comedia musical y es conocido por su participación en el programa “Saturday Night Live”.</p>
+      <div class="image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Adam_Sandler_by_Gage_Skidmore_2.jpg" alt="Adam Sandler SNL">
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
